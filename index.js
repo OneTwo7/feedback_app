@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 
 require('./models/User');
 
-mongoose.connect(keys.db.mongoURI).catch(err => {
+mongoose.connect(keys.mongoURI).catch(err => {
   console.log('encountered error when connection to DB -', err);
 });
 
@@ -16,7 +16,7 @@ require('./services/passport');
 
 app.use(cookieSession({
   maxAge: 30 * 24 * 60 * 60 * 1000,
-  keys: [keys.cookie.secret]
+  keys: [keys.cookieKey]
 }));
 
 app.use(passport.initialize());
