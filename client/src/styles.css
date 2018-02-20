@@ -1,3 +1,8 @@
 nav {
-  margin-bottom: 2rem;
+  margin-bottom: .5rem;
+}
+
+#credits-count {
+  margin: 0 1.5rem;
+  color: #fff;
 }

@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import Payments from './Payments';
 
 class Header extends Component {
   renderContent () {
-    switch (this.props.auth) {
+    const { auth } = this.props;
+
+    switch (auth) {
       case null:
         return;
       case false:
@@ -13,11 +17,13 @@ class Header extends Component {
           </a>
         );
       default:
-        return (
-          <a href="/api/logout" className="btn btn-outline-light">
+        return [
+          <Payments key="1" />,
+          <span key="3" id="credits-count">Credits: {auth.credits}</span>,
+          <a key="2" href="/api/logout" className="btn btn-outline-light">
             Logout
           </a>
-        );
+        ];
     }
   }
 
@@ -25,7 +31,12 @@ class Header extends Component {
     return (
       <nav className="navbar navbar-dark bg-primary">
         <div className="container">
-          <a href="/" className="navbar-brand mr-auto">Feedback App</a>
+          <Link
+            to={this.props.auth ? '/surveys' : '/'}
+            className="navbar-brand mr-auto"
+          >
+            Feedback App
+          </Link>
           {this.renderContent()}
         </div>
       </nav>
