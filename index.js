@@ -8,6 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 require('./models/User');
+require('./models/Survey');
 
 mongoose.connect(keys.mongoURI).catch(err => {
   console.log('encountered error when connection to DB -', err);
@@ -27,6 +28,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
   const path = require('path');

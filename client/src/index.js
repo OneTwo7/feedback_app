@@ -8,6 +8,10 @@ import reducers from './reducers';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
+// Development only axios helpers
+import axios from 'axios';
+window.axios = axios;
+
 const store = createStore(
   reducers,
   {},
