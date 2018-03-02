@@ -12,8 +12,9 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd client && yarn install && yarn build"
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd client && yarn install && yarn build",
+    "webhook": "lt -p 5000 -s gosdibeknrb23543dfkljv2"
   },
   "author": "",
   "license": "MIT",
@@ -22,13 +23,16 @@
     "body-parser": "^1.18.2",
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.2",
+    "lodash": "^4.17.5",
     "mongoose": "^5.0.3",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
+    "path-parser": "^3.0.1",
     "stripe": "^5.4.0"
   },
   "devDependencies": {
     "concurrently": "^3.5.1",
+    "localtunnel": "^1.8.3",
     "nodemon": "^1.14.12"
   }
 }
