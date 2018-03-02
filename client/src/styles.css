@@ -64,3 +64,22 @@ nav {
   border-bottom: 1px solid rgba(0,0,0,.125);
   padding-bottom: .5rem;
 }
+
+.survey-item {
+  margin: 2rem 0;
+}
+
+.survey-item .card-header {
+  font-size: 1.5rem;
+  padding: .5rem 1.25rem;
+}
+
+.sent-date {
+  text-align: right;
+  font-size: .9rem;
+}
+
+.survey-item .card-footer div {
+  display: inline-block;
+  margin-right: 2rem;
+}
