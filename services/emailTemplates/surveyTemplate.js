@@ -1,13 +1,13 @@
 const keys = require('../../config/keys');
 
-module.exports = (survey) => {
+module.exports = ({ body }) => {
   return `
     <html>
       <body>
         <div style="text-align: center;">
           <h1>We'd like your feedback!</h1>
           <p>Please answer the following question:</p>
-          <p>${survey.body}</p>
+          <p>${body}</p>
           <div>
             <a href="${keys.domain}/api/surveys/thanks">Yes</a>
           </div>

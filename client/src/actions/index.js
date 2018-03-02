@@ -23,3 +23,13 @@ export const handleToken = token => (
     dispatchFetchUser(dispatch, res.data);
   }
 );
+
+export const submitSurvey = (values, history) => (
+  async dispatch => {
+    const res = await axios.post('/api/surveys', values);
+
+    history.push('/surveys');
+
+    dispatchFetchUser(dispatch, res.data);
+  }
+);
